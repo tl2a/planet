@@ -1,0 +1,68 @@
+body {
+    background-color: #190b1f;
+    padding: 3em;
+}
+
+#v0 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    pointer-events: none;
+}
+
+#set-height {
+    display: block;
+}
+
+.tap-on {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: solid 2px #fff;
+}
+.tap-on.onhold:hover::before {
+    transform: scale(1.2);
+    background-color: #f9103b;
+}
+.tap-on::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: all 0.2s;
+    will-change: transform, background-color;
+}
+.tap-on::after {
+    content: 'Press and hold';
+    color: #481e5a;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: max-content;
+    left: -24px;
+    top: -36px;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    #v0 {
+        width: 75%;
+    }
+} 
